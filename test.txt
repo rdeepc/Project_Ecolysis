@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Standards Mode", which gives better cross    -->
+<!-- browser compatibility to the application.     -->
+<!-- Omitting this line leaves most browsers in    -->
+<!-- "Quirks mode", emulating the bugs in older    -->
+<!-- browser versions.                             -->
+
+<html>
+  <head>
+    <!-- Let IE know to use the IE9 standard browser and document modes -->
+    <meta content="LAS-ESGF" name="LAS-Profile" id="las-profile" />
+
+   <!--
+
+         Default:
+
+         <meta content="http://vmap0.tiles.osgeo.org/wms/vmap0" name="WMS-SERVER" id="wms-server" />
+         <meta content="basic" name="WMS-LAYER" id="wms-layer" />
+
+         Alternatives:
+
+         <meta content="http://www.gebco.net/data_and_products/gebco_web_services/web_map_service/mapserv" name="WMS-SERVER" id="wms-server" />
+         <meta content="GEBCO_LATEST" name="WMS-LAYER" id="wms-layer" />
+
+         <meta content="http://www.cmar.csiro.au/geoserver/ows" name="WMS-SERVER" id="wms-server" />
+         <meta content="ea-be:World_Bright-Earth-e-Atlas-basemap" name="WMS-LAYER" id="wms-layer" />
+
+         <meta content="http://data.fao.org/maps/ows" name="WMS-SERVER" id="wms-server" />
+         <meta content="COMMON:dark_bluemarble" name="WMS-LAYER" id="wms-layer" />
+   -->
+
+    <meta content="http://vmap0.tiles.osgeo.org/wms/vmap0" name="WMS-SERVER" id="wms-server" />
+    <meta content="basic" name="WMS-LAYER" id="wms-layer" />
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <!--                                           -->
+    <!-- Any title is fine                         -->
+    <!--                                           -->
+    <title>LAS UI</title>
+    
+    <!--                                           -->
+    <!-- This script loads your compiled module.   -->
+    <!-- If you add any GWT meta tags, they must   -->
+    <!-- be added before this line.                -->
+    <!--                                           -->
+    <!--  strider.weathertopconsulting.com 
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAQd8QHM5bG96kv_FdbP2d_xSi6Ygk863vw1oXTT1cyritDYiIOhSs8NJgobGDysmECbXI_Ld9bweUlA"
+      type="text/javascript"></script>
+    -->
+    <!--  weathertopconsulting.com 
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAQd8QHM5bG96kv_FdbP2d_xTCqQI3Sj7hqI6Uh8C-ytlVpmJc8xS3dXHdpRVUOyawacVodlU95YCvWg"
+      type="text/javascript"></script>
+    -->
+    <!-- localhost
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAQd8QHM5bG96kv_FdbP2d_xT2yXp_ZAY8_ufC3CFXhHIE1NvwkxRutBJbRgJeVagWzAByU3KazihaXg"
+      type="text/javascript"></script>
+       -->
+    <!--  If you would like to change the WMS tile server used by the map widget, put your server URL here
+          and un-comment this section...
+          
+          
+    <script type="text/javascript" language="javascript">
+        var OL_map_widget_tile_server = "http://vmap0.tiles.osgeo.org/wms/vmap0";
+    </script>
+     
+    
+    -->
+ 
+    <script type="text/javascript" language="javascript" src="JavaScript/frameworks/OpenLayers/OpenLayers.js"></script>
+    <script type="text/javascript" language="javascript" src="JavaScript/frameworks/OpenLayers/util.js"></script>
+    <script type="text/javascript" language="javascript" src="JavaScript/frameworks/OpenLayersExtensions/DrawSingleFeature.js"></script>
+    <script type="text/javascript" language="javascript" src="JavaScript/frameworks/OpenLayersExtensions/HorizontalPath.js"></script>
+    <script type="text/javascript" language="javascript" src="JavaScript/frameworks/OpenLayersExtensions/VerticalPath.js"></script>
+    <script type="text/javascript" language="javascript" src="JavaScript/frameworks/OpenLayersExtensions/JumpPath.js"></script>
+    <script type="text/javascript" language="javascript" src="JavaScript/components/gov.noaa.pmel.tmap.las.UI/gov.noaa.pmel.tmap.las.UI.nocache.js"></script>
+    
+<!--
+With SDM we don't need to compile in the style to see it so load the style in the page.
+-->
+    <link rel="stylesheet" href="JavaScript/components/css/LAS.css" type="text/css"/>
+    <link rel="stylesheet" href="JavaScript/ui/LASUI.css" type="text/css"/>
+    <link rel="stylesheet" href="JavaScript/components/css/OLMapWidget.css" type="text/css"/>
+  </head>
+
+  <!--                                           -->
+  <!-- The body can have arbitrary html, or      -->
+  <!-- you can leave the body empty if you want  -->
+  <!-- to create a completely dynamic UI.        -->
+  <!--                                           -->
+  <body>
+    
+    <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" WIDTH="100%">
+	<TBODY>
+		<TR>
+                        <TD bgcolor="#2ea3f2"  height="10px" width="750px" align="left">
+                                <div style="position: relative; width: 750px; height: 10px;margin-right:2px">
+                                <a href="/" target="_new"><span class="top_link_title">MY NASA DATA Home</span></a>
+                                <a class="top_link_title" href="/las/" target="_new">Advanced</a>
+                                <a class="top_link_title" href="/las2/" target="_new">Intermediate</a>
+                                <a class="top_link_title" href="/las3/" target="_new">Basic</a>
+                                <a class="top_link_title" href="/EarthSystemLAS/" target="_new">Earth System Data Explorer</a>
+				</div>
+			</TD>  			
+				<td bgcolor="#2ea3f2" align="right" >
+			     <!--      <a class="top_link_left"  href="https://mynasadata.larc.nasa.gov/thredds/dodsC/las/" target="_new">OPeNDAP (F-TDS) / THREDDS</a> --> 
+			</td>
+	  	</TR>
+	  	<TR>
+			<TD bgcolor="#7391AD" valign="top" align="left">
+				<div style="position:relative;height:33px;overflow:hidden;width:100%;margin-right:0px;margin-left:0px;border-bottom:1pt solid #FFFFFC">
+					<span  style="color:Black;position:relative;left:10px;top:0px;height:35px;font-weight:bold;font-size:18pt;position:absolute;">MY NASA DATA Live Access Server - Advanced</span>
+					<span  style="color:Black;position:relative;left:12px;top:0px;height:35px;font-weight:bold;font-size:18pt;position:absolute;">MY NASA DATA Live Access Server - Advanced</span>
+					<span  style="color:Black;position:relative;left:10px;top:2px;height:35px;font-weight:bold;font-size:18pt;position:absolute;">MY NASA DATA Live Access Server - Advanced</span>
+					<span  style="color:Black;position:relative;left:12px;top:2px;height:35px;font-weight:bold;font-size:18pt;position:absolute;">MY NASA DATA Live Access Server - Advanced</span>
+					<span  style="color:#FFFFFC;position:relative;left:11px;top:1px;height:35px;font-weight:bold;font-size:18pt;position:absolute;">MY NASA DATA Live Access Server - Advanced</span>
+				</div>
+			</TD>
+                	<TD id="headerBottomRight" bgcolor="#7391AD" width="55px" valign="top" style="align:right;border-bottom:1pt solid #FFFFFC">
+				<link rel="stylesheet" href="JavaScript/ui/LASUI.css" type="text/css"/>
+			</TD>
+		</TR>
+	</TBODY>
+</TABLE>
+    <div id="vizGal"></div>
+    <!-- OPTIONAL: include this if you want history support -->
+    <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>	
+    <iframe id="__printingFrame" style="width:0;height:0;border:0"></iframe>	
+    <table>
+	<tr>
+		<td width="50%" align="left" class="bodyBlack"><font size="-1">
+			<a href="http://www.doc.gov/">US Department of Commerce</a>
+			<a href="http://www.noaa.gov/">NOAA</a> 
+			| <a href="http://www.oar.noaa.gov">OAR</a>
+       	| <a href="http://www.pmel.noaa.gov">PMEL</a> 
+			| <a href="http://www.pmel.noaa.gov/home/persons.shtml">Contacts</a> 
+			| <a href="http://www.noaa.gov/privacy.html">Privacy Policy</a> 
+			| <a href="http://www.noaa.gov/disclaimer.html">Disclaimer</a>
+			| <a href="mailto:mynasadata@lists.nasa.gov">mailto: mynasadata@lists.nasa.gov</a>
+		</td>  
+	</tr>
+</table>
+
+
+  </body>
+</html>
