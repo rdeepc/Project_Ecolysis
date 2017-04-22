@@ -27,12 +27,12 @@ parser = BeautifulSoup(src,"html.parser")
 tag=parser.findAll('canvas')
 tag=tag[0]
 
-location = tag.location
-
-print(location)
-# size = tag.size
-# driver.save_screenshot('screenshot.png') # saves screenshot of entire page
-# driver.quit()
+# location = tag.location
+#
+# print(location)
+size = tag.size
+driver.save_screenshot('screenshot.png') # saves screenshot of entire page
+driver.quit()
 #
 # im = Image.open('screenshot.png') # uses PIL library to open image in memory
 #
