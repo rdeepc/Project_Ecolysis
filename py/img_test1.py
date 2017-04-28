@@ -12,6 +12,6 @@ j = 1
 for image in files:
     i = cv2.imread(image)
     temp = i[204:271, 188:305]
-    cv2.imwrite('%d.jpg' %1, temp)
+    cv2.imwrite('%d.jpg' %j, temp)
     j+=1
 
